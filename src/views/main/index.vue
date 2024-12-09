@@ -1,5 +1,5 @@
 <template>
-  <div>这是首页内容</div>
+  <div>这是移动端内容</div>
 </template>
 
 <script setup></script>
