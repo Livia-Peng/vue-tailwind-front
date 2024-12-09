@@ -1,0 +1,21 @@
+{
+  "name": "vue-tailwind-front",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.8",
+    "sass": "^1.45.0",
+    "tailwindcss": "^3.0.23",
+    "vite": "^6.0.1"
+  }
+}
