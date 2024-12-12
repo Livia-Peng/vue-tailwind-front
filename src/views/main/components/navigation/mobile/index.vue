@@ -30,15 +30,16 @@
       </li>
     </ul>
 
-    <!-- <m-popup v-model="isOpenPopup">
-      <menu-vue @onItemClick="onItemClick"></menu-vue>
-    </m-popup> -->
+    <m-popup v-model="isOpenPopup">
+      <menu-vue :categories="data" @onItemClick="onItemClick"></menu-vue>
+    </m-popup>
   </div>
 </template>
 
 <script setup>
   import { ref, watch, onBeforeUpdate } from 'vue'
   import { useScroll } from '@vueuse/core'
+  import MenuVue from '@/views/main/components/menu/index.vue'
 
   defineProps({
     data: {
@@ -47,10 +48,12 @@
     }
   })
 
+  const isOpenPopup = ref(false)
   // 选中值
   const currentCategoryIndex = ref(0)
   const onItemClick = (index) => {
     currentCategoryIndex.value = index
+    isOpenPopup.value = false
   }
 
   // 获取填充的所有 item 元素
@@ -90,6 +93,4 @@
       width: width + 'px'
     }
   }
-
-  const isOpenPopup = ref(false)
 </script>
