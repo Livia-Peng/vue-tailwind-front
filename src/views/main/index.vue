@@ -1,5 +1,9 @@
 <template>
-  <div>这是移动端内容</div>
+  <div>
+    <Navigation></Navigation>
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+  import Navigation from './components/navigation/index.vue'
+</script>
