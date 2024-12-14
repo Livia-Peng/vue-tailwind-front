@@ -1,4 +1,6 @@
 module.exports = {
+  // 手动切换暗模式
+  darkMode: 'class',
   // 应用范围
   content: ['./index.html', './src/**/*.{vue,js}'],
   theme: {

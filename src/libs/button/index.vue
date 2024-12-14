@@ -1,17 +1,10 @@
 <template>
   <button
     class="text-sm text-center rounded duration-150 flex justify-center items-center"
-    :class="[
-      typeEnum[type],
-      sizeEnum[sizeKey].button,
-      { 'active:scale-105': isActiveAnim }
-    ]"
+    :class="[typeEnum[type], sizeEnum[sizeKey].button, { 'active:scale-105': isActiveAnim }]"
     @click.stop="onBtnClick">
     <!-- 展示 loading -->
-    <m-svg-icon
-      v-if="loading"
-      name="loading"
-      class="w-2 h-2 animate-spin mr-1"></m-svg-icon>
+    <m-svg-icon v-if="loading" name="loading" class="w-2 h-2 animate-spin mr-1"></m-svg-icon>
     <!-- icon 按钮 -->
     <m-svg-icon
       v-if="icon"
@@ -95,9 +88,7 @@
       default: 'default',
       validator(val) {
         // 获取所有的可选的大小（注意剔除 icon 开头的元素，因为我们期望开发者输入 size="default"，但不期望开发者输入 size="icon-default"）
-        const keys = Object.keys(sizeEnum).filter(
-          (key) => !key.includes('icon')
-        )
+        const keys = Object.keys(sizeEnum).filter((key) => !key.includes('icon'))
         // 开发者指定大小是否在可选大小中
         const result = keys.includes(val)
         // 如果不在则给开发者提示
