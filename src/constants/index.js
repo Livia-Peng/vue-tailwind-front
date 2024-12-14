@@ -5,5 +5,11 @@ export const commonConfig = {
   ALL_CATEGORY_ITEM: {
     id: 'all',
     name: '全部'
+  },
+  // 主题色
+  themeTypes: {
+    DARK: 'dark',
+    LIGHT: 'light',
+    SYSTEM: 'system'
   }
 }
