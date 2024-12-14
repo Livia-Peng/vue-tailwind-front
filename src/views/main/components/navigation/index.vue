@@ -1,22 +1,15 @@
 <template>
-  <MobileNavigationVue
-    v-if="isMobileTerminal"
-    :data="categoryData"></MobileNavigationVue>
+  <MobileNavigationVue v-if="isMobileTerminal"></MobileNavigationVue>
+  <PcNavigationVue v-else></PcNavigationVue>
 </template>
 
 <script setup>
-  import { ref } from 'vue'
+  import { useStore } from 'vuex'
   import { isMobileTerminal } from '@/utils/flexible'
   import MobileNavigationVue from './mobile/index.vue'
-  import { getCategory } from '@/api/category'
-  import { commonConfig } from '@/constants'
+  import PcNavigationVue from './pc/index.vue'
 
-  const categoryData = ref([])
-  const getCategoryData = async () => {
-    const { categorys } = await getCategory()
-    categoryData.value = [commonConfig.ALL_CATEGORY_ITEM].concat(
-      categorys || []
-    )
-  }
-  getCategoryData()
+  const store = useStore()
+  // 触发 category 数据获取动作
+  store.dispatch('category/useCategoryData')
 </script>

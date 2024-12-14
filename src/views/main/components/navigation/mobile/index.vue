@@ -1,8 +1,6 @@
 <template>
   <div class="bg-white dark:bg-zinc-900 duration-500 sticky top-0 left-0 z-10">
-    <ul
-      class="relative flex overflow-x-auto p-1 text-xs text-zinc-600 overflow-hidden"
-      ref="ulTarget">
+    <ul class="relative flex overflow-x-auto p-1 text-xs text-zinc-600 overflow-hidden" ref="ulTarget">
       <!-- 汉堡按钮 -->
       <li
         class="z-20 fixed top-0 right-[-1px] h-4 px-1 flex items-center bg-white dark:bg-zinc-900 shadow-l-white dark:shadow-l-zinc"
@@ -18,7 +16,7 @@
 
       <!-- category item -->
       <li
-        v-for="(item, index) in data"
+        v-for="(item, index) in $store.getters.categorys"
         :key="item.id"
         class="shrink-0 px-1.5 py-0.5 z-10 duration-200 last:mr-4"
         :class="{
@@ -31,7 +29,7 @@
     </ul>
 
     <m-popup v-model="isOpenPopup">
-      <menu-vue :categories="data" @onItemClick="onItemClick"></menu-vue>
+      <menu-vue @onItemClick="onItemClick"></menu-vue>
     </m-popup>
   </div>
 </template>
@@ -40,13 +38,6 @@
   import { ref, watch, onBeforeUpdate } from 'vue'
   import { useScroll } from '@vueuse/core'
   import MenuVue from '@/views/main/components/menu/index.vue'
-
-  defineProps({
-    data: {
-      type: Array,
-      required: true
-    }
-  })
 
   const isOpenPopup = ref(false)
   // 选中值
