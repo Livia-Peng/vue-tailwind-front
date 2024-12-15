@@ -8,4 +8,6 @@
    3. 按钮 button
    4. 搜索框 search
    5. 气泡卡片 popover
+   6. 瀑布流 waterfall
+   7. 无限长列表 infinite-list
 4. 前台与中台路由/架构区分
