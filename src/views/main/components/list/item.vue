@@ -1,6 +1,11 @@
 <template>
   <div class="bg-white dark:bg-zinc-900 xl:dark:bg-zinc-800 rounded pb-1">
-    <div class="relative w-full rounded cursor-zoom-in group" @click="onToPinsClick">
+    <div
+      class="relative w-full rounded cursor-zoom-in group"
+      :style="{
+        backgroundColor: randomRGB()
+      }"
+      @click="onToPinsClick">
       <!-- :src="data.photo" -->
       <img
         v-lazy
@@ -54,6 +59,7 @@
 <script setup>
   import { useFullscreen, useElementBounding } from '@vueuse/core'
   import { ref, computed } from 'vue'
+  import { randomRGB } from '@/utils/color'
 
   const props = defineProps({
     data: {
