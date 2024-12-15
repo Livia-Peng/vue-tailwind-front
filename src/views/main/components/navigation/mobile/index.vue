@@ -20,10 +20,10 @@
         :key="item.id"
         class="shrink-0 px-1.5 py-0.5 z-10 duration-200 last:mr-4"
         :class="{
-          'text-zinc-100 ': currentCategoryIndex === index
+          'text-zinc-100 ': $store.getters.currentCategoryIndex === index
         }"
         :ref="setItemRef"
-        @click="onItemClick(index)">
+        @click="onItemClick(item)">
         {{ item.name }}
       </li>
     </ul>
@@ -38,12 +38,13 @@
   import { ref, watch, onBeforeUpdate } from 'vue'
   import { useScroll } from '@vueuse/core'
   import MenuVue from '@/views/main/components/menu/index.vue'
+  import { useStore } from 'vuex'
+
+  const store = useStore()
 
   const isOpenPopup = ref(false)
-  // 选中值
-  const currentCategoryIndex = ref(0)
-  const onItemClick = (index) => {
-    currentCategoryIndex.value = index
+  const onItemClick = (item) => {
+    store.commit('app/changeCurrentCategory', item)
     isOpenPopup.value = false
   }
 
@@ -67,13 +68,12 @@
   const ulTarget = ref(null)
   const { x: ulScrollLeft } = useScroll(ulTarget)
   watch(
-    () => currentCategoryIndex.value,
+    () => store.getters.currentCategoryIndex,
     (val) => {
-      changeSliderStyle()
+      changeSliderStyle(val)
     }
   )
-  const changeSliderStyle = () => {
-    const idx = currentCategoryIndex.value
+  const changeSliderStyle = (idx) => {
     // 获取选中元素的 left、width
     const { left, width } = itemRefs[idx].getBoundingClientRect()
     console.log({ idx, left, width })

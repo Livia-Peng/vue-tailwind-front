@@ -29,6 +29,9 @@
 
 <script setup>
   import { ref } from 'vue'
+  import { useStore } from 'vuex'
+
+  const store = useStore()
 
   /**
    * 状态切换处理
@@ -42,6 +45,6 @@
    * 选中状态处理
    */
   const onItemClick = (item) => {
-    console.log(item)
+    store.commit('app/changeCurrentCategory', item)
   }
 </script>
