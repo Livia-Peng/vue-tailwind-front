@@ -24,12 +24,12 @@ const changeTheme = (theme) => {
   // html 的 class
   let themeClassName = ''
   switch (theme) {
-    case commonConfig.themeTypes.DARK:
-      themeClassName = 'dark'
-      break
     case commonConfig.themeTypes.SYSTEM:
       watchSystemThemeChange()
       themeClassName = matchMedia.matches ? 'dark' : 'light'
+      break
+    case commonConfig.themeTypes.DARK:
+      themeClassName = 'dark'
       break
     case commonConfig.themeTypes.LIGHT:
     default:

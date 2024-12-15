@@ -1,10 +1,10 @@
-<script setup>
-  import { isMobileTerminal } from './utils/flexible'
-</script>
-
 <template>
   <!-- 一级路由出口 -->
-  <router-view />
+  <div class="h-screen w-screen fixed top-0 left-0">
+    <router-view />
+  </div>
 </template>
+
+<script setup></script>
 
 <style scoped></style>
