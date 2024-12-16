@@ -60,6 +60,8 @@
   import { useFullscreen, useElementBounding } from '@vueuse/core'
   import { ref, computed } from 'vue'
   import { randomRGB } from '@/utils/color'
+  import { saveAs } from 'file-saver'
+  import { message } from '@/libs'
 
   const props = defineProps({
     data: {
@@ -108,7 +110,13 @@
   /**
    * 下载按钮点击事件
    */
-  const onDownload = () => {}
+  const onDownload = () => {
+    // 提示消息
+    message('success', '图片开始下载')
+    setTimeout(() => {
+      saveAs(props.data.photoDownLink, `${props.data.title} - 作者：${props.data.author}`)
+    }, 100)
+  }
 
   /**
    * 分享按钮点击处理
