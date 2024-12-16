@@ -33,6 +33,9 @@ module.exports = {
         'error-200': '#f3471c',
         'error-300': '#ffffff'
       },
+      backdropBlur: {
+        '4xl': '240px'
+      },
       variants: {
         scrollbar: ['dark']
       }
