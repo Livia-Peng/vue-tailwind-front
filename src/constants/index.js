@@ -23,5 +23,10 @@ export const commonConfig = {
     DARK: 'dark',
     LIGHT: 'light',
     SYSTEM: 'system'
+  },
+  loginTypes: {
+    username: 'username',
+    QQ: 'QQ',
+    WX: 'WX'
   }
 }
