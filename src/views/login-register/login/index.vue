@@ -42,7 +42,7 @@
 
       <div class="flex justify-around mt-4">
         <!-- QQ -->
-        <!-- <qq-login-vue></qq-login-vue> -->
+        <qq-login-vue></qq-login-vue>
         <!-- 微信 -->
         <!-- <wx-login-vue></wx-login-vue> -->
       </div>
@@ -70,7 +70,7 @@
   import { useStore } from 'vuex'
   import { useRouter } from 'vue-router'
   import { commonConfig } from '@/constants'
-  // import qqLoginVue from './qq-login.vue'
+  import qqLoginVue from './qq-login.vue'
   // import wxLoginVue from './weixin-login.vue'
 
   const store = useStore()

@@ -102,7 +102,7 @@
   })
   // loading
   const loading = ref(false)
-  console.log(route)
+  // console.log(route)
   /**
    * 触发注册
    */
