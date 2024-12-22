@@ -27,7 +27,7 @@
 
   // 搜索的回调事件
   const onSearchHandler = (val) => {
-    console.log('触发 searchText 变化')
+    // console.log('触发 searchText 变化')
     inputValue.value = val
     if (val) {
       // 保存历史记录

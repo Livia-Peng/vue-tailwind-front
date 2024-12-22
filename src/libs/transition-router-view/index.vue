@@ -68,7 +68,7 @@
    * 监听路由变化
    */
   router.beforeEach((to, from) => {
-    console.log(virtualTaskStack.value)
+    // console.log(virtualTaskStack.value)
     // 定义当前动画名称
     transitionName.value = props.routerType
 

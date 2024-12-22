@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white dark:bg-zinc-900 duration-500 sticky top-0 left-0 z-10">
-    <ul class="relative flex overflow-x-auto p-1 text-xs text-zinc-600 overflow-hidden" ref="ulTarget">
+    <ul class="relative flex overflow-x-auto p-1 text-sm text-zinc-600 overflow-hidden" ref="ulTarget">
       <!-- 汉堡按钮 -->
       <li
         class="z-20 fixed top-0 right-[-1px] h-4 px-1 flex items-center bg-white dark:bg-zinc-900 shadow-l-white dark:shadow-l-zinc"
@@ -11,7 +11,7 @@
       <!-- 滑块 -->
       <li
         ref="sliderTarget"
-        class="absolute h-[22px] bg-zinc-900 dark:bg-zinc-800 rounded-lg duration-200"
+        class="absolute h-[26px] bg-zinc-900 dark:bg-zinc-800 rounded-lg duration-200"
         :style="sliderStyle"></li>
 
       <!-- category item -->
@@ -61,8 +61,8 @@
 
   // 滑块
   const sliderStyle = ref({
-    transform: 'translateX(-1px)',
-    width: '48px'
+    transform: 'translateX(-0.25px)',
+    width: '56px'
   })
   // 获取 ul 元素，以计算偏移位置
   const ulTarget = ref(null)
@@ -76,7 +76,7 @@
   const changeSliderStyle = (idx) => {
     // 获取选中元素的 left、width
     const { left, width } = itemRefs[idx].getBoundingClientRect()
-    console.log({ idx, left, width })
+    // console.log({ idx, left, width })
     // 为 sliderStyle 设置属性
     sliderStyle.value = {
       // ul 横向滚动位置 + 当前元素的 left 偏移量
