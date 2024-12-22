@@ -12,6 +12,7 @@
 </template>
 
 <script setup>
+  import { alipay } from '@/utils/pay'
   const props = defineProps({
     payData: {
       required: true,
@@ -19,5 +20,7 @@
     }
   })
 
-  const onAlipay = () => {}
+  const onAlipay = () => {
+    alipay(props.payData.title, props.payData.desc)
+  }
 </script>

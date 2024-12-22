@@ -7,7 +7,7 @@
       <p class="text-[32px] text-orange-600 font-sans">
         <span class="text-base text-zinc-900 dark:text-zinc-200"> 支付金额： </span>
         <span class="text-lg mr-[-12px]">￥</span>
-        19
+        {{ payData.price }}
       </p>
 
       <div class="flex mt-3">
@@ -25,6 +25,7 @@
 
 <script setup>
   import discountsVue from '../discounts.vue'
+  import { alipay } from '@/utils/pay'
 
   const props = defineProps({
     payData: {
@@ -33,7 +34,9 @@
     }
   })
 
-  const onAliPayClick = () => {}
+  const onAliPayClick = () => {
+    alipay(props.payData.title, props.payData.desc)
+  }
 </script>
 
 <style lang="scss" scoped></style>

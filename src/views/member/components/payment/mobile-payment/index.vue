@@ -8,7 +8,7 @@
         <p class="">
           券后合计：
           <span class="text-red-600 text-[16px] font-sans font-medium">￥</span>
-          <span class="text-red-600 text-[22px] font-sans font-medium">9</span>
+          <span class="text-red-600 text-[22px] font-sans font-medium">{{ payData.price }}</span>
         </p>
         <p class="text-red-600">优惠券：限时立减 ￥10</p>
       </div>
