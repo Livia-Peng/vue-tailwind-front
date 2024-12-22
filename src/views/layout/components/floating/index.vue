@@ -36,12 +36,15 @@
   </div>
 </template>
 
+<script>
+  const FEEDBACK_URL = 'https://support.qq.com/product/383681'
+</script>
+
 <script setup>
   import Driver from 'driver.js'
   import 'driver.js/dist/driver.min.css'
   import steps from './steps'
   import { onMounted } from 'vue'
-  // import { FEEDBACK_URL } from '@/constants'
 
   /**
    * 引导页处理
@@ -69,7 +72,7 @@
    * 反馈处理
    */
   const onToFeedback = () => {
-    // window.open(FEEDBACK_URL, '_blank')
+    window.open(FEEDBACK_URL, '_blank')
   }
 </script>
 
