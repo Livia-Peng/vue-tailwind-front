@@ -30,3 +30,8 @@ export const commonConfig = {
     WX: 'WX'
   }
 }
+
+export const ossConfig = {
+  REGION: 'oss-cn-beijing',
+  BUCKET: 'imooc-front'
+}
