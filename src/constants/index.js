@@ -35,3 +35,8 @@ export const ossConfig = {
   REGION: 'oss-cn-beijing',
   BUCKET: 'imooc-front'
 }
+
+export const weiboConfig = {
+  APP_KEY: '',
+  UID: ''
+}

@@ -62,6 +62,7 @@
   import { randomRGB } from '@/utils/color'
   import { saveAs } from 'file-saver'
   import { message } from '@/libs'
+  import { weiboShare } from '@/utils/share'
 
   const props = defineProps({
     data: {
@@ -121,5 +122,7 @@
   /**
    * 分享按钮点击处理
    */
-  const onShareClick = () => {}
+  const onShareClick = () => {
+    weiboShare(props.data.photo, `https://imooc-front.lgdsunday.club/pins/${props.data.id}`)
+  }
 </script>
