@@ -40,6 +40,7 @@
 <script setup>
   import { useRouter } from 'vue-router'
   import { useStore } from 'vuex'
+  import { confirm } from '@/libs'
 
   const router = useRouter()
   const store = useStore()
@@ -67,7 +68,17 @@
   ]
 
   const onItemClick = (path) => {
-    console.log(path)
+    if (path) {
+      // 配置跳转方式
+      store.commit('app/changeRouterType', 'push')
+      router.push(path)
+      return
+    }
+    // 无路径则为退出登录
+    confirm('您确定要退出登录吗？').then(() => {
+      // 退出登录不存在跳转路径
+      store.dispatch('user/logout')
+    })
   }
 
   const onToLogin = () => {

@@ -10,7 +10,7 @@ const service = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   (config) => {
-    config.headers.icode = '你需要在这里填入你的 icode'
+    config.headers.icode = 'helloqianduanxunlianying'
     if (store.getters.token) {
       // 如果token存在 注入token
       config.headers.Authorization = `Bearer ${store.getters.token}`
@@ -38,7 +38,7 @@ service.interceptors.response.use(
     if (error.response && error.response.data && error.response.data.code === 401) {
       store.dispatch('user/logout')
     }
-    $message('error', error.response.data.message)
+    $message('error', error.response?.data?.message)
     return Promise.reject(error)
   }
 )
